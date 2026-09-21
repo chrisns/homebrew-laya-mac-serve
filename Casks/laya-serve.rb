@@ -18,15 +18,12 @@ cask "laya-serve" do
   app "LayaServe.app"
 
   caveats <<~EOS
-    Laya Serve is ad-hoc signed and not notarized by Apple.
-    Homebrew quarantines it, so macOS blocks the first launch. To allow it:
+    Laya Serve is ad-hoc signed and not notarized by Apple, so macOS blocks
+    the first launch. Remove the quarantine flag:
 
-      System Settings > Privacy & Security > scroll to Security
-      Click "Open Anyway" next to the Laya Serve warning
+      xattr -dr com.apple.quarantine #{appdir}/LayaServe.app
 
-    To skip that step, install with:
-
-      brew install --cask --no-quarantine chrisns/laya-mac-serve/laya-serve
+    Or open it once from System Settings > Privacy & Security > Open Anyway.
 
     The download is about 1.1 GB, because the application holds the model
     weights. It needs no network and no Hugging Face account at run time.
