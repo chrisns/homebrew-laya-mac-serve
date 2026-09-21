@@ -1,6 +1,6 @@
 cask "laya-serve" do
   version "0.1.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "7c3ef05ef7bc5b9197136b0474eaab2d0211a81473d00e18e287ffe3f6a81eda"
 
   url "https://github.com/chrisns/laya-mac-serve/releases/download/v#{version}/LayaServe-#{version}-arm64.dmg"
   name "Laya Serve"
